@@ -1,0 +1,146 @@
+%%%%%%%%%%%%%%%%%
+% altacv.cls - This class provides various commands and environments for formatting CV sections like options (normal photo), Fonts & colours, cv sections, cv entries (\cvevent, \cvachievement, \cvtag, \cvskill
+%%%%%%%%%%%%%%%%
+
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 package.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" mmayer.tex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Lato}
+\else
+  % If using pdflatex:
+  \usepackage[default]{lato}
+\fi
+
+% Change the colours if you want to
+\definecolor{VividPurple}{HTML}{3E0097}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+% \colorlet{name}{black}
+% \colorlet{tagline}{PastelRed}
+\colorlet{heading}{VividPurple}
+\colorlet{headingrule}{VividPurple}
+% \colorlet{subheading}{PastelRed}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+
+%% Use (and optionally edit if necessary) this .cfg if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+% \input{pubs-num.cfg}
+
+%% sample.bib contains your publications
+% \addbibresource{sample.bib}
+
+\begin{document}
+\newenvironment{sloppypar*}{\sloppy\ignorespaces}{\par}
+\name{Marri Prasanth}
+\tagline{DevOps Engineer}
+\photoR{2.5cm}{prasanth_pic.jpeg}
+
+\personalinfo{%
+    % Not all of these are required!
+    % You can add your own with \printinfo{symbol}{detail}
+    \email{reachtechprasanth@gmail.com}
+    \phone{+91-9052685586}
+    %  \homepage{www.homepage.com}
+    %  \twitter{@twitterhandle}
+    \github{https://github.com/email4prasanth}
+    \linkedin{linkedin.com/in/marri-prasanth-a336ab306/}
+}
+
+\makecvheader
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+\begin{itemize}
+    \item \normalsize{Having 2.6+ years of experience in AWS Cloud and DevOps in IT Infrastructure and Hosting based on environments. I am seeking a better opportunity in the industry in which my skills can be utilized to the best of my potential to aid the growth of the company. I would be keen to accept responsibility and new challenges with enthusiasm and commitment.}
+\end{itemize}
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{PROFESSIONAL EXPERIENCE}
+\cvevent{Cloud \& DevOps Engineer}{Adiel Technologies Pvt Ltd}{06 2021 -- Till Date}{Chennai, IN}
+\cvsection{B}
+
+
+\switchcolumn
+\cvsection{SKILLS}
+% \begin{table}[htbp]
+%     \begin{tabular}{|c|c|}
+%     \hline
+%     \begin{tabular}[c]{@{}c@{}} \textbf{Version Control} \end{tabular} & GIT \\ \hline
+%      \begin{tabular}[c]{@{}c@{}} \textbf{Scripting languages} \end{tabular} & Python, Shell script \\ \hline
+%      \begin{tabular}[c]{@{}c@{}} \textbf{} \end{tabular} &  \\ \hline
+%      \begin{tabular}[c]{@{}c@{}} \textbf{} \end{tabular} &  \\ \hline
+%      \begin{tabular}[c]{@{}c@{}} \textbf{} \end{tabular} &  \\ \hline
+%     \end{tabular}%
+% \end{table}
+
+\begin{tabular}{ |p{3cm}||p{3cm}|  }
+ \hline
+    Version Control &   GIT  \\ \hline
+    Scripting languages   & Python, Shell script\\ \hline
+    % Build tools &   Jenkins  \\ \hline
+    Cloud &   AWS -VPC, ec2, S3, EBS, EFS, ELB, ASG, SQS, SNS, ECR, CloudFront.  \\ \hline
+    Containers &   Docker  \\ \hline
+    Orchestration &   Kubernetes, Yaml deployment, Helm charts  \\ \hline
+    Infrastructure as a code &   Terraform  \\ \hline
+    Configuration Management &  Ansible, Playbooks, Ansible role configuration  \\ \hline
+    CI \slash CD &  Webhook, Jenkins, Artifact management \& Deployment  \\ \hline
+    Monitoring Tool &   Cloud Watch, ELK, Grafana \& Prometheus  \\ \hline
+
+
+ \hline
+\end{tabular}
+
+\cvsection{D}
+
+\switchcolumn
+\newpage
+\cvsection{E}
+
+\cvsection{f}
+\switchcolumn
+\newpage
+\cvsection{G}
+
+\cvsection{H}
+
+\end{paracol}
+
+\end{document}
