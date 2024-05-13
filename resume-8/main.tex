@@ -12,6 +12,9 @@
 
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
+\usepackage{xcolor}
+
+\newcommand{\highlight}[2][yellow]{\colorbox{#1}{#2}}
 
 
 % Change the font if you want to, depending on whether
@@ -45,6 +48,7 @@
 \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
 \renewcommand{\cvsubsectionfont}{\large\bfseries}
 
+
 % Change the bullets for itemize and rating marker
 % for \cvskill if you want to
 \renewcommand{\cvItemMarker}{{\small\textbullet}}
@@ -63,6 +67,7 @@
 % \addbibresource{sample.bib}
 
 \begin{document}
+{\fontfamily{put}\selectfont
 \newenvironment{sloppypar*}{\sloppy\ignorespaces}{\par}
 \name{Marri Prasanth}
 \tagline{DevOps Engineer}
@@ -84,7 +89,8 @@
 %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
 \AtBeginEnvironment{itemize}{\small}
 \begin{itemize}
-    \item \normalsize{Having 2.6+ years of experience in AWS Cloud and DevOps in IT Infrastructure and Hosting based on environments. I am seeking a better opportunity in the industry in which my skills can be utilized to the best of my potential to aid the growth of the company. I would be keen to accept responsibility and new challenges with enthusiasm and commitment.}
+
+    \item \large{Experience in AWS Cloud and DevOps in IT Infrastructure and Hosting based on environments. I am seeking a better opportunity in the industry in which my skills can be utilized to the best of my potential to aid the growth of the company. I would be keen to accept responsibility and new challenges with enthusiasm and commitment.}
 \end{itemize}
 %% Set the left/right column width ratio to 6:4.
 \columnratio{0.6}
@@ -92,14 +98,41 @@
 % Start a 2-column paracol. Both the left and right columns will automatically
 % break across pages if things get too long.
 \begin{paracol}{2}
-
-\cvsection{PROFESSIONAL EXPERIENCE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{WORK EXPERIENCE}
 \cvevent{Cloud \& DevOps Engineer}{Adiel Technologies Pvt Ltd}{06 2021 -- Till Date}{Chennai, IN}
-\cvsection{B}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{PROFESSIONAL SUMMARY}
 
-
+\begin{itemize}
+\large{
+    \item Around 3 years of experience in IT of Designing, Development, Integration of DevOps tools, Build Automation, Configuration Management, Build/Release and Delivery Management, CI/CD.
+    \item  Experienced in creating, configuring and maintaining Infrastructure on AWS Cloud services including Virtual Private Cloud (VPC), EC2, RDS, S3, Route53, SNS, CloudFront, CloudWatch and IAM.
+    \item  Experienced in creating various dashboards, metrics, alarms and notifications for servers using AWS Cloud Watch, Grafana.
+    \item  Experience working with version control systems like GIT and used Source code  management tools GitHub including command line applications.
+    \item Create clusters in AWS Cloud and manage the clusters using Kubernetes(k8s).
+    \item Experienced in App Containerization technology Docker , creating Docker images, Containers, Docker Registry to store images, cloud-based registry Docker Hub, Docker Swarm to manage containers.
+    \item Expertise in LINUX / UNIX system builds, administration, Installations, Upgrades, Troubleshooting on different distributions such as Ubuntu
+    \item Experienced in Bug/Issue tracking tool like Bugzilla, JIRA, FreshService.
+    \item  Strong work ethic with good Interpersonal and Organizational skills.
+    \item Ability to work under minimal supervision and guidance.   
+}
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \cvsection{ROLES AND RESPONSIBILITIES}
+% \begin{itemize}
+% \normalsize{
+%     \item Experienced in using source code management (SCM) tools such as GitHub. Experience in implementing different branching strategies as per project requirement.
+%     \item Skilled in automating CI/CD processes by creating build and deploy templates as per project requirements, and maintaining central templates for different applications. Proficient in  roubleshooting builds in Azure DevOps and Jenkins.
+%     \item Actively participated in an Agile software development environment that utilized the Scrum process. Currently using Jira for project management.
+%     \item Create and update Docker images and push them to Elastic Container Registry to ensure seamless continuous integration and deployment of multiple applications.
+%     \item Hands-on experience with Amazon Elastic Kubernetes Service (EKS), including Kubernetes with helm charts releases and upgrading AKS clusters to the latest version.
+%     }
+% \end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \switchcolumn
 \cvsection{SKILLS}
+\large{
 % \begin{table}[htbp]
 %     \begin{tabular}{|c|c|}
 %     \hline
@@ -110,37 +143,135 @@
 %      \begin{tabular}[c]{@{}c@{}} \textbf{} \end{tabular} &  \\ \hline
 %     \end{tabular}%
 % \end{table}
+% \begin{table}
+    \begin{tabular}{ |p{3cm}||p{3cm}|  }
+     \hline
+        Version Control &   GIT  \\ \hline
+        Scripting languages   & Python, Shell script\\ \hline
+        % Build tools &   Jenkins  \\ \hline
+        Cloud &   AWS -VPC, EC2, S3, EBS, EFS, ELB, ASG, SQS, SNS, ECR,     CloudFront.  \\ \hline
+        Containers &   Docker  \\ \hline
+        Orchestration &   Kubernetes, Yaml deployment, Helm charts  \\ \hline
+        Infrastructure as a code &   Terraform  \\ \hline
+        Configuration Management &  Ansible, Playbooks, Ansible role configuration   \\ \hline
+        CI \slash CD &  Webhook, Jenkins, Artifact management \& Deployment  \\     \hline
+        Monitoring Tool &   Cloud Watch, ELK, Grafana \& Prometheus  \\ \hline
+     \hline
+    \end{tabular}
+% \end{table}
+}
 
-\begin{tabular}{ |p{3cm}||p{3cm}|  }
- \hline
-    Version Control &   GIT  \\ \hline
-    Scripting languages   & Python, Shell script\\ \hline
-    % Build tools &   Jenkins  \\ \hline
-    Cloud &   AWS -VPC, ec2, S3, EBS, EFS, ELB, ASG, SQS, SNS, ECR, CloudFront.  \\ \hline
-    Containers &   Docker  \\ \hline
-    Orchestration &   Kubernetes, Yaml deployment, Helm charts  \\ \hline
-    Infrastructure as a code &   Terraform  \\ \hline
-    Configuration Management &  Ansible, Playbooks, Ansible role configuration  \\ \hline
-    CI \slash CD &  Webhook, Jenkins, Artifact management \& Deployment  \\ \hline
-    Monitoring Tool &   Cloud Watch, ELK, Grafana \& Prometheus  \\ \hline
-
-
- \hline
-\end{tabular}
-
-\cvsection{D}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{LEARNING}
+    \cvevent{Frameworks \& Libraries}{}{}{}
+    \large{
+        \cvtag{Azure} 
+        \cvtag{PyTorch} \\
+        \cvtag{Numpy} 
+        \cvtag{pandas} \\
+        \cvtag{Scikitlearn} 
+        \cvtag{Pytorch} \\
+        \cvtag{Tensorflow} 
+        \cvtag{Scipy} \\
+}
 
 \switchcolumn
 \newpage
-\cvsection{E}
+\cvsection{Projects}
+\cvevent{Microservice Rollout On Amazon Elastic Kubernetes Service (Amazon EKS) - Client MGM Healthcare}{Deploying of Cloud Infrastructure on AWS}{}{}
+\begin{itemize}
+\large{
+    \item Worked in container-based technologies like Docker, Kubernetes.
+    \item Involved inload balancing and adding them to Routes to be accessible from outside, troubleshooting pods through ssh and logs, modification of Build configs, templates, Image streams, etc.
+    \item Experience in designing a Terraform and deploying it in cloud deployment manager to spin up resources like cloud virtual networks.
+    \item Compute Engines in public and private subnets along with AutoScaler in AWS Cloud Platform.
+    \item Set up Firewall rules in order to allow or deny traffic to and from the VM's instances 
+    \item Implemented \& maintained the branching, tagging \& build/release strategies using SCM tool like GIT.
+    \item Using Jenkins to deploy code to AWS Cloud, create new namespaces, creating docker images and pushing them to container registry.
+    \item Worked on all major components of Docker like, Docker Daemon, Hub, Images, Registry, and Swarm.
+}
+\end{itemize}
+\textbf{\large{Environment}}: Amazon Web Services, Ansible, Docker, Kubernetes,
+Jenkins, GIT, Python, Shell, GitHub, Linux.
 
-\cvsection{f}
+\divider
+%%%% Project-2 %%%%%%%
+\cvevent{Infrastructure Automation using Terraform -Client Genisys }{AWS Infrastructure Automation using Jenkins \& Terraform}{}{}
+\begin{itemize}
+\large{
+    \item Created Jenkins jobs to create AWS Infrastructure from GitHub repositories containing Ansible playbooks. 
+    \item Worked in DevOps group running Jenkins in a Docker container with EC2 slaves in Amazon AWS cloud configuration.
+    \item Managed GitHub repositories and permissions, including branching and tagging.
+    \item Developing Terraform code for complete AWS Infra Deployment and deploying modules based on AWS Services for re-usability.
+    \item Automated Deployment for all new clients using Build \& Release Pipelines.
+    \item Integrating Terraform \& Packer with Jenkins Declarative Pipelines.
+}
+\end{itemize}
+\textbf{\large{Environment}}: AWS, Jenkins, JIRA,GIT, GITHUB, Ansible, Linux.
+
 \switchcolumn
 \newpage
-\cvsection{G}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cvsection{H}
+\cvsection{MOST PROUD OF}
+\cvachievement{\faHeartbeat}{Persistence \& Loyalty}{I showed despite the hard moments and my willingness to stay with Adiel Technology after the acquisition}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{Strengths}
+\large{
+\cvtag{Hard-working (16/24)}\\
+\cvtag{Inquisitively explorative}\\
+\cvtag{Autonomous problem-solver}\\
+\cvtag{Rapidly adaptable}\\
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{EDUCATION}
+\cvevent{M.Tech}{JNTUCEA, Anantapur}{10-2014 -- 03-2017}{Anantapur, AP,IN}
+        \begin{itemize}
+            \item Percentage: 70.67 
+        \end{itemize}
+        \divider
+    
+    \cvevent{B.Tech}{Siddartha Institute Of Science \& Technology}{06-2008 -- 04-2012}{Tirupati, AP, IN}
+        \begin{itemize}
+            \item Percentage: 76.11
+        \end{itemize}
+        
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{Languages}
+\cvskill{English}{5}
+\cvskill{Telugu}{5}
+\cvskill{Hindi}{3.5}
+\cvskill{Tamil}{3.5}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{My Daily Routine}
+\hspace*{-4em}  %% quick hack to move the wheelchart a bit left
+\wheelchart{1.5cm}{0.5cm}{%
+  10/13em/accent!30/{A},
+  25/9em/accent!60/{B},
+  5/11em/accent!10/{D},
+  20/11em/accent!40/{E},
+  5/8em/accent!20/{C},
+  20/9em/accent/{F}
+}
+\large{
+\cvtag{A - Spending time with family}\\ % 2
+\cvtag{B - Sleeping \& dreaming about work}\\ % 6
+\cvtag{C - Tech-savvy in DevOps}\\ %4
+\cvtag{D - Helping my wife with household tasks}\\ %4
+\cvtag{E - Daily Stand up \& Project Meetings}\\ %2
+\cvtag{F - DevOps Engineer tasks} %6
+}
+
+        % \begin{enumerate}
+        %     \item Deploying Cloud Infrastructure on AWS cloud.
+        %     \item Creating \& Maintaining Build and Release Pipelines for successful CI \slash CD.
+        %     \item Automation of manual tasks for infrastructure deployments \&configuration.
+        %     \item Working \& Resolving Developer Issues.
+        %     \item New Tools R\&D for Product Stability \& ensure consistency and stability.
+        %     \item Daily Stand up \& Project Meetings following Agile Framework.
+        %     \item Cloud Security \& Compliance.  
+        % \end{enumerate}
 \end{paracol}
-
+}
 \end{document}
